@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VisionGuide AI</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <p class="eyebrow">ACCESSIBILITY ASSISTANT</p>
+      <h1>VisionGuide AI</h1>
+      <p class="subtitle">Understand your surroundings with image analysis and voice guidance.</p>
+    </header>
+
+    <section class="panel">
+      <h2>Analyze a scene</h2>
+      <p>Choose an image or take a photo with your device camera.</p>
+      <input id="imageInput" type="file" accept="image/*" capture="environment">
+      <button id="analyzeBtn">Analyze image</button>
+      <button id="speakBtn" class="secondary" disabled>Read results aloud</button>
+      <p id="status" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="panel results" aria-live="polite">
+      <h2>Guidance</h2>
+      <h3>Scene description</h3>
+      <p id="scene">Your scene description will appear here.</p>
+      <h3>Detected objects</h3>
+      <ul id="objects"><li>No analysis yet.</li></ul>
+      <h3>Recognized text (OCR)</h3>
+      <p id="ocr">No text analyzed yet.</p>
+    </section>
+    <footer>
+      <p><strong>Safety note:</strong> This is an experimental assistive prototype, not a replacement for a cane, guide dog, or trained assistance. Do not rely on it to detect hazards or navigate safely.</p>
+    </footer>
+  </main>
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
